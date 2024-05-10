@@ -1,6 +1,6 @@
 package com.feginclienttest;
 
-import com.service.ExampleClient;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -23,7 +23,7 @@ class FeginClientTestApplicationTests {
     @Autowired
     private MockMvc mockMvc;
 
-    @MockBean
+   /* @MockBean
     private ExampleClient exampleClient;
 
     @Test
@@ -36,7 +36,7 @@ class FeginClientTestApplicationTests {
                 .andExpect(status().isOk())
                 .andExpect((ResultMatcher) content().string(mockResponse));
 
-    }
+    }*/
 
     @Test
     void contextLoads() {

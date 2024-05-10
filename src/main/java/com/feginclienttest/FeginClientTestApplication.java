@@ -11,6 +11,9 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 * json을 리턴하는 공용 API 활용
 * https://api.androidhive.info/contacts/
 * https://api.github.com/repos/OpenFeign/feign/contributors
+* 참고 블로그
+* https://vmpo.tistory.com/109
+* 참고 git
 * https://github.com/build99k/feign-api-test
 *
 * */

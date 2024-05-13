@@ -1,0 +1,55 @@
+logging:
+ level:
+  root: info
+  com.example: DEBUG
+  web: TRACE
+  org.springframework.web: TRACE
+
+spring:
+ devtools:
+  livereload:
+   enabled: true
+  restart:
+   enabled: true
+ jackson:
+  serialization:
+    indent-output: true
+
+
+# Feign Client
+feign:
+ hystrix:
+  enabled: true
+ client:
+  config:
+   default:
+    connectTimeout: 5000 # 연결 타임 아웃 설정 5초
+    readTimeout: 5000  # 리드 타임 아웃 5초
+    loggerLevel: basic # log 레벨 5초
+
+
+# Circuit Breaker
+hystrix:
+ threadpool:
+  default:
+   maximumSize: 10
+ command:
+  default:
+   execution:
+    isolation:
+     thread:
+      timeoutInMilliseconds: 1000
+   metrics:
+    rollingStatus:
+     timeInMilliseconds: 10000
+   circuitBreaker:
+    requestVolumeThreshold: 5
+    errorThresholdPercentage: 50
+
+
+# Actuator # 아래의 설정에서 추가로 server port(GUI 접속용 port)가 들어갈 수 있음.
+management:
+ endpoints:
+  web:
+   exposure:
+    include: ["health", "info", "hystrix.stream"]
